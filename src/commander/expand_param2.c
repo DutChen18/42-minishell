@@ -93,6 +93,7 @@ void
 	ctxx->best = 0;
 	while (ctxx->str[ctxx->j] != '\0')
 	{
+		ctxx->j += 1;
 		ctxx->ch = ctxx->str[ctxx->j];
 		ctxx->str[ctxx->j] = '\0';
 		ctxx->match = pattern_match(ctxx->str, ctxx->comp_pattern, 0);
@@ -103,7 +104,6 @@ void
 			if (!ctxx->long_mode)
 				break ;
 		}
-		ctxx->j += 1;
 	}
 	exp->parts[exp->count - 1].str[ctxx->i]
 		= ft_strdup(ctxx->str + ctxx->best);
